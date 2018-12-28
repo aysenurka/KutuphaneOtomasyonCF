@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KutuphaneOtomasyonCF", "KutuphaneOtomasyonCF\KutuphaneOtomasyonCF.csproj", "{339780EB-9A26-4E68-BBB4-CA6E3EE6090E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KutuphaneOtomasyon", "KutuphaneOtomasyonCF\KutuphaneOtomasyon.csproj", "{339780EB-9A26-4E68-BBB4-CA6E3EE6090E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
