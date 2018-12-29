@@ -14,22 +14,33 @@ namespace KutuphaneOtomasyonCF.Entities
         [Key]
         public int KiraId { get; set; }
 
-        [Required]
-        public int UyeId { get; set; }
-        [Required]
-        [ForeignKey("UyeId")]
-        public virtual Uye Uye { get; set; }
+        //[Required]
+        //public int UyeId { get; set; }
+        //[Required]
+        //[ForeignKey("UyeId")]
+        //public virtual Uye Uye { get; set; }
+
+        //[Required]
+        //public int KitapId { get; set; }
+        //[Required]
+        //[ForeignKey("KitapId")]
+        //public virtual Kitap Kitap { get; set; }
+
+
+        //[Key, Column(Order = 0)]
+        //public int UyeId { get; set; }
+
+        //[Key, Column(Order = 1)]
+        //public int KitapId { get; set; }
 
         [Required]
-        public int KitapId { get; set; }
-        [Required]
-        [ForeignKey("KitapId")]
-        public virtual Kitap Kitap { get; set; }
-
-        [Required]
-        public static DateTime AlisTarihi { get; set; } = DateTime.Now.Date;
+        [Column(TypeName = "smalldatetime")]
+        public static DateTime AlisTarihi { get; set; } = DateTime.Now;
 
         public static DateTime? VerisTarihi { get; set; }
+
+        //navigation property
+        public virtual Uye Uye { get; set; }
 
         public virtual ICollection<Kitap> Kitaplar { get; set; } = new HashSet<Kitap>();
 

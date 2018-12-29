@@ -188,6 +188,7 @@
             this.MaximizeBox = false;
             this.Name = "BookForm";
             this.Text = "BookForm";
+            this.Load += new System.EventHandler(this.BookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuStok)).EndInit();
             this.cmsKitap.ResumeLayout(false);
             this.ResumeLayout(false);

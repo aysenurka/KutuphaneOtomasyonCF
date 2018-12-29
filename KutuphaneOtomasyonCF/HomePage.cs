@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KutuphaneOtomasyonCF.MockData;
 
 namespace KutuphaneOtomasyonCF
 {
@@ -17,35 +18,64 @@ namespace KutuphaneOtomasyonCF
             InitializeComponent();
         }
 
-        private MemberForm memberForm;
-        private BookForm bookForm;
-        private RentForm rentForm;
+        private MemberForm frmMember;
+        private BookForm frmBook;
+        private RentForm frmRent;
+        private AuthorForm frmAuthor;
 
         private void uyeEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (memberForm == null || memberForm.IsDisposed)
-                memberForm = new MemberForm();
-
-            memberForm.MdiParent = this;
-            memberForm.Show();
+            if (frmMember == null || frmMember.IsDisposed)
+            {
+                frmMember = new MemberForm()
+                {
+                    MdiParent = this
+                };
+                frmMember.Show();
+            }
         }
 
         private void kitapEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (bookForm == null || bookForm.IsDisposed)
-                bookForm = new BookForm();
-
-            bookForm.MdiParent = this;
-            bookForm.Show();
+            if (frmBook == null || frmBook.IsDisposed)
+            {
+                frmBook = new BookForm()
+                {
+                    MdiParent = this
+                };
+                frmBook.Show();
+            }
         }
 
         private void kiralaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (rentForm == null || rentForm.IsDisposed)
-                rentForm = new RentForm();
+            if (frmRent == null || frmRent.IsDisposed)
+            {
+                frmRent = new RentForm()
+                {
+                    MdiParent = this
+                };
+                frmRent.Show();
+            }
+        }
 
-            rentForm.MdiParent = this;
-            rentForm.Show();
+        private void yazarEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmAuthor == null || frmAuthor.IsDisposed)
+            {
+                frmAuthor = new AuthorForm()
+                {
+                    MdiParent = this
+                };
+                frmAuthor.Show();
+            }
+        }
+
+
+        public static MockContext MockContext { get; set; }
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            MockContext = new MockData.MockContext();
         }
     }
 }

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KutuphaneOtomasyonCF.Entities;
+using KutuphaneOtomasyonCF.Helpers;
+using KutuphaneOtomasyonCF.MockData;
 
 namespace KutuphaneOtomasyonCF
 {
@@ -15,6 +18,14 @@ namespace KutuphaneOtomasyonCF
         public BookForm()
         {
             InitializeComponent();
+        }
+
+        private List<Kitap> kitaplar;
+        private void BookForm_Load(object sender, EventArgs e)
+        {
+            kitaplar = HomePage.MockContext.Kitaplar;
+
+            lstKitap.DataSource = DataHelper.KitaplariGetir();
         }
     }
 }

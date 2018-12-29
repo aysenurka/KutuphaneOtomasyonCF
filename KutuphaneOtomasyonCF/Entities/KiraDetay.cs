@@ -11,14 +11,20 @@ namespace KutuphaneOtomasyonCF.Entities
     [Table("KiraDetaylar")]
     public class KiraDetay
     {
-        [Key]
-        public int KiraDetayId { get; set; }
+        //[Key]
+        //public int KiraDetayId { get; set; }
 
-        [Required]
+        //[Required]
+        //public int KiraId { get; set; }
+        //[Required]
+        //[ForeignKey("KiraId")]
+        //public virtual Kira Kira { get; set; }
+
+        [Key,Column(Order = 0)]
         public int KiraId { get; set; }
-        [Required]
-        [ForeignKey("KiraId")]
-        public virtual Kira Kira { get; set; }
+
+        [Key,Column(Order = 1)]
+        public int KitapId { get; set; }
 
         public TimeSpan GunSayisi { get; set; } = (TimeSpan)(Kira.VerisTarihi - Kira.AlisTarihi);
     }

@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorForm.Designer.cs">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +71,8 @@
     <Compile Include="Entities\Kitap.cs" />
     <Compile Include="Entities\Uye.cs" />
     <Compile Include="Entities\Yazar.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\EntityHelper.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +89,13 @@
     <Compile Include="Migrations\201812281153267_A1.Designer.cs">
       <DependentUpon>201812281153267_A1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812291730322_A2.cs" />
+    <Compile Include="Migrations\201812291730322_A2.Designer.cs">
+      <DependentUpon>201812291730322_A2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Mock\MockContext.cs" />
+    <Compile Include="Mock\MockData.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,17 +105,23 @@
     <Compile Include="RentForm.Designer.cs">
       <DependentUpon>RentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\KitapViewModel.cs" />
+    <Compile Include="ViewModels\UyeViewModel.cs" />
+    <Compile Include="ViewModels\YazarViewModel.cs" />
     <EmbeddedResource Include="BookForm.resx">
       <DependentUpon>BookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member.resx">
+    <EmbeddedResource Include="MemberForm.resx">
       <DependentUpon>MemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812281153267_A1.resx">
       <DependentUpon>201812281153267_A1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291730322_A2.resx">
+      <DependentUpon>201812291730322_A2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
