@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using KutuphaneOtomasyonCF.Entities;
 using KutuphaneOtomasyonCF.Helpers;
 using KutuphaneOtomasyonCF.MockData;
+using KutuphaneOtomasyonCF.ViewModels;
 
 namespace KutuphaneOtomasyonCF
 {
@@ -20,12 +21,14 @@ namespace KutuphaneOtomasyonCF
             InitializeComponent();
         }
 
-        private List<Kitap> kitaplar;
+        private List<KitapViewModel> kitaplar;
         private void BookForm_Load(object sender, EventArgs e)
         {
-            kitaplar = HomePage.MockContext.Kitaplar;
+            //kitaplar = HomePage.MockContext.Kitaplar;
+            //kitaplar.Add(DataHelper.KitaplariGetir());
 
-            lstKitap.DataSource = DataHelper.KitaplariGetir();
+            lstKitap.DataSource = MockContext.Kitaplar;
         }
+
     }
 }

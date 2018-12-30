@@ -10,21 +10,36 @@ namespace KutuphaneOtomasyonCF.Helpers
 {
     public class DataHelper
     {
-        static MyContext db = new MyContext();
-        public static List<KitapViewModel> KitaplariGetir()
+        MyContext db = new MyContext();
+        public List<KitapViewModel> KitaplariGetir()
         {
-            var kitaplar = db.Kitaplar
-                .OrderBy(x => x.KitapAd)
+            //var kitaplar = db.Kitaplar
+            //    .OrderBy(x => x.KitapAd)
+            //    .Select(x => new KitapViewModel()
+            //    {
+            //        KitapId = x.KitapId,
+            //        KitapAd = x.KitapAd,
+            //        Yazar = x.Yazar
+            //    })
+            //    .ToList();
+
+            var kitaplar2 = new List<KitapViewModel>();
+            foreach (var item in db.Kitaplar.OrderBy(x => x.KitapAd)
                 .Select(x => new KitapViewModel()
                 {
                     KitapId = x.KitapId,
-                    KitapAd = x.KitapAd
-                })
-                .ToList();
-            return kitaplar;
+                    KitapAd = x.KitapAd,
+                    Yazar = x.Yazar
+                }))
+                kitaplar2.Add(item);
+
+
+            return kitaplar2;
+
+
         }
 
-        public static List<UyeViewModel> UyeleriGetir()
+        public List<UyeViewModel> UyeleriGetir()
         {
             var uyeler = db.Uyeler
                 .OrderBy(x => x.UyeAd).ThenBy(x => x.UyeSoyad)
@@ -38,7 +53,7 @@ namespace KutuphaneOtomasyonCF.Helpers
             return uyeler;
         }
 
-        public static List<YazarViewModel> YazarlariGetir()
+        public List<YazarViewModel> YazarlariGetir()
         {
             var yazarlar = db.Yazarlar
                 .OrderBy(x => x.YazarAd).ThenBy(x => x.YazarSoyad)

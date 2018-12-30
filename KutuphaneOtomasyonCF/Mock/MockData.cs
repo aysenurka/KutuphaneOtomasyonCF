@@ -8,11 +8,11 @@ using KutuphaneOtomasyonCF.MockData;
 
 namespace KutuphaneOtomasyonCF.Mock
 {
-    public class MockData
+    public static class MockData
     {
-        public MockContext MockContext { get; set; }
+        public static MockContext MockContext { get; set; }
 
-        public MockData()
+        static MockData()
         {
             MockContext = new MockContext();
 
@@ -23,7 +23,8 @@ namespace KutuphaneOtomasyonCF.Mock
                     UyeAd = FakeData.NameData.GetFirstName(),
                     UyeSoyad = FakeData.NameData.GetSurname(),
                     UyeTckn = FakeData.TextData.GetNumeric(11),
-                    UyeTelefon = "0" + FakeData.TextData.GetNumeric(10)
+                    UyeTelefon = "0" + FakeData.TextData.GetNumeric(10),
+                    UyeEmail = (FakeData.NameData.GetFirstName().Substring(0, 1) + "." + FakeData.NameData.GetSurname() + "@email.com").ToLower()
                 });
             }
 
@@ -40,7 +41,8 @@ namespace KutuphaneOtomasyonCF.Mock
             {
                 MockContext.Kitaplar.Add(new Kitap()
                 {
-                    KitapAd = FakeData.TextData.GetSentence()
+                    KitapAd = FakeData.TextData.GetSentence(),
+                    Stok = (short)FakeData.NumberData.GetNumber(1, 5)
                 });
             }
         }

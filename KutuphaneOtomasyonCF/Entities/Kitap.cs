@@ -21,9 +21,8 @@ namespace KutuphaneOtomasyonCF.Entities
         [Required]
         public short Stok { get; set; }
 
-        [Required]
         public int YazarId { get; set; }
-        [Required]
+
         [ForeignKey("YazarId")]
         public virtual Yazar Yazar { get; set; }
     }
