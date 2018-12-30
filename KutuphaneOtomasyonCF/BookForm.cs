@@ -24,10 +24,12 @@ namespace KutuphaneOtomasyonCF
         private List<KitapViewModel> kitaplar;
         private void BookForm_Load(object sender, EventArgs e)
         {
+            MyContext db=new MyContext();
             //kitaplar = HomePage.MockContext.Kitaplar;
             //kitaplar.Add(DataHelper.KitaplariGetir());
 
-            lstKitap.DataSource = MockContext.Kitaplar;
+            //MockContext.Kitaplar=db.Kitaplar.OrderBy(x => x.KitapAd).ToList();
+            //lstKitap.DataSource = MockContext.Kitaplar;
         }
 
     }

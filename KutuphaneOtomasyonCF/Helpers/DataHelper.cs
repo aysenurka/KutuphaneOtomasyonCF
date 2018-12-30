@@ -32,7 +32,7 @@ namespace KutuphaneOtomasyonCF.Helpers
                     Yazar = x.Yazar
                 }))
                 kitaplar2.Add(item);
-
+            
 
             return kitaplar2;
 
