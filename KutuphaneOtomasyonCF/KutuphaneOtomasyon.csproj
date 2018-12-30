@@ -60,6 +60,9 @@
     <Compile Include="AuthorForm.Designer.cs">
       <DependentUpon>AuthorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\KiraBusiness.cs" />
+    <Compile Include="BLL\KitapBusiness.cs" />
+    <Compile Include="BLL\UyeBusiness.cs" />
     <Compile Include="BookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +100,10 @@
     <Compile Include="Migrations\201812291945311_A3.Designer.cs">
       <DependentUpon>201812291945311_A3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812301308422_B1.cs" />
+    <Compile Include="Migrations\201812301308422_B1.Designer.cs">
+      <DependentUpon>201812301308422_B1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Mock\MockContext.cs" />
     <Compile Include="Mock\MockData.cs" />
@@ -130,6 +137,9 @@
     <EmbeddedResource Include="Migrations\201812291945311_A3.resx">
       <DependentUpon>201812291945311_A3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301308422_B1.resx">
+      <DependentUpon>201812301308422_B1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -160,5 +170,6 @@
   <ItemGroup>
     <None Include="Resources\Kutuphane.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
