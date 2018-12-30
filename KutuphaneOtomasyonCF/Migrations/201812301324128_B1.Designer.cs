@@ -13,7 +13,7 @@ namespace KutuphaneOtomasyonCF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812301308422_B1"; }
+            get { return "201812301324128_B1"; }
         }
         
         string IMigrationMetadata.Source
