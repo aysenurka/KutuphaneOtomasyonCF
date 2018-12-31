@@ -10,33 +10,26 @@ namespace KutuphaneOtomasyonCF.Helpers
 {
     public class DataHelper
     {
-        MyContext db = new MyContext();
         public List<KitapViewModel> KitaplariGetir()
         {
-            //var kitaplar = db.Kitaplar
-            //    .OrderBy(x => x.KitapAd)
-            //    .Select(x => new KitapViewModel()
-            //    {
-            //        KitapId = x.KitapId,
-            //        KitapAd = x.KitapAd,
-            //        Yazar = x.Yazar
-            //    })
-            //    .ToList();
+            MyContext db = new MyContext();
 
-            var kitaplar2 = new List<KitapViewModel>();
-            foreach (var item in db.Kitaplar.OrderBy(x => x.KitapAd)
+            var kitaplar = db.Kitaplar
+                .OrderBy(x => x.KitapAd)
+                .ThenByDescending(x => x.Stok)
                 .Select(x => new KitapViewModel()
                 {
                     KitapId = x.KitapId,
                     KitapAd = x.KitapAd,
-                    Yazar = x.Yazar
-                }))
-                kitaplar2.Add(item);
+                    Stok = x.Stok,
+                    YazarId = x.YazarId,
+                    YazarAd = x.Yazar.YazarAd,
+                    YazarSoyad = x.Yazar.YazarSoyad
+                })
+                .ToList();
             
 
-            return kitaplar2;
-
-
+            return kitaplar;
         }
 
         public List<UyeViewModel> UyeleriGetir()
@@ -48,15 +41,10 @@ namespace KutuphaneOtomasyonCF.Helpers
                 {
                     UyeId = x.UyeId,
                     UyeAd = x.UyeAd,
-                    UyeSoyad = x.UyeSoyad,
-                    //UyeTckn = x.UyeTckn,
-                    //UyeTelefon = x.UyeTelefon,
-                    //UyeEmail = x.UyeEmail
+                    UyeSoyad = x.UyeSoyad
                 })
                 .ToList();
             return uyeler;
-
-         
         }
 
         public List<YazarViewModel> YazarlariGetir()

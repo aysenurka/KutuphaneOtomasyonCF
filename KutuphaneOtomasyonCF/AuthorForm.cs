@@ -23,18 +23,7 @@ namespace KutuphaneOtomasyonCF
         private YazarViewModel seciliYazar;
         private void AuthorForm_Load(object sender, EventArgs e)
         {
-            MyContext db = new MyContext();
-
             lstYazarlar.DataSource = dataHelper.YazarlariGetir();
-            //db.Yazarlar
-            //.OrderBy(x => x.YazarAd).ThenBy(x => x.YazarSoyad)
-            //.Select(x => new YazarViewModel()
-            //{
-            //    YazarId = x.YazarId,
-            //    YazarAd = x.YazarAd,
-            //    YazarSoyad = x.YazarSoyad
-            //})
-            //.ToList();
         }
 
         private void lstYazarlar_SelectedIndexChanged(object sender, EventArgs e)

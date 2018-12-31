@@ -21,30 +21,33 @@ namespace KutuphaneOtomasyonCF
             InitializeComponent();
         }
 
-        private List<KitapViewModel> kitaplar;
+        DataHelper dataHelper=new DataHelper();
+        //private List<KitapViewModel> kitaplar;
+        private KitapViewModel seciliKitap;
+        private YazarViewModel seciliYazar;
         private void BookForm_Load(object sender, EventArgs e)
         {
-            MyContext db = new MyContext();
-
-            lstKitaplar.DataSource = db.Kitaplar
-                .OrderBy(x => x.KitapAd)
-                .Select(x=> new KitapViewModel() {
-                    KitapId=x.KitapId,
-                    KitapAd=x.KitapAd,
-                    Yazar=x.Yazar, //viewmodelden sonra kontrol et
-                    Stok=x.Stok
-                })
-                .ToList();
+            lstKitaplar.DataSource = dataHelper.KitaplariGetir();
         }
 
         private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstKitaplar.SelectedIndex == null) return;
 
-            var seciliKitap = lstKitaplar.SelectedItem as KitapViewModel;
+            MyContext db=new MyContext();
+            seciliKitap = lstKitaplar.SelectedItem as KitapViewModel;
+            //seciliYazar = seciliKitap.
+            //seciliYazar = db.Yazarlar
+            //    .SingleOrDefault(x => x.YazarId == seciliKitap.YazarId);
+            var gosterilecekYazar = db.Yazarlar
+                .SingleOrDefault(x => x.YazarId == seciliKitap.YazarId);
+            //seciliYazar.YazarId = seciliKitap.YazarId;
+
             txtId.Text = seciliKitap.KitapId.ToString();
             txtAd.Text = seciliKitap.KitapAd;
-            txtYazar.Text = seciliKitap.Yazar.ToString();
+            //txtYazar.Text = seciliYazar.ToString();
+            seciliKitap.YazarId = gosterilecekYazar.YazarId;
+
             nuStok.Value = seciliKitap.Stok;
         }
     }

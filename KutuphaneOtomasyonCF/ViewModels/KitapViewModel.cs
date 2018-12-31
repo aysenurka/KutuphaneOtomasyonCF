@@ -11,9 +11,11 @@ namespace KutuphaneOtomasyonCF.ViewModels
     {
         public int KitapId { get; set; }
         public string KitapAd { get; set; }
-        public Yazar Yazar { get; set; } // bu kısım düzenlenecek yazarid ad soyad olarak alınacak - sonrasında bookform kontrol et
         public short Stok { get; set; }
-
-        public override string ToString() => $"{KitapAd} - {Yazar.YazarAd} {Yazar.YazarSoyad}";
+        public int YazarId { get; set; }
+        public string YazarAd { get; set; }
+        public string YazarSoyad { get; set; }
+        
+        public override string ToString() => $"{KitapAd} - {YazarAd} {YazarSoyad} - {Stok}";
     }
 }
