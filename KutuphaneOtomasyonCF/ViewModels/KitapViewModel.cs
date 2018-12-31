@@ -13,6 +13,6 @@ namespace KutuphaneOtomasyonCF.ViewModels
         public string KitapAd { get; set; }
         public Yazar Yazar { get; set; }
 
-        public override string ToString() => $"{KitapAd} - {Yazar}";
+        public override string ToString() => $"{KitapAd} - {Yazar.YazarAd} {Yazar.YazarSoyad}";
     }
 }
