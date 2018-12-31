@@ -49,9 +49,9 @@ namespace KutuphaneOtomasyonCF.Helpers
                     UyeId = x.UyeId,
                     UyeAd = x.UyeAd,
                     UyeSoyad = x.UyeSoyad,
-                    UyeTckn = x.UyeTckn,
-                    UyeTelefon = x.UyeTelefon,
-                    UyeEmail = x.UyeEmail
+                    //UyeTckn = x.UyeTckn,
+                    //UyeTelefon = x.UyeTelefon,
+                    //UyeEmail = x.UyeEmail
                 })
                 .ToList();
             return uyeler;
@@ -61,6 +61,7 @@ namespace KutuphaneOtomasyonCF.Helpers
 
         public List<YazarViewModel> YazarlariGetir()
         {
+            MyContext db = new MyContext();
             var yazarlar = db.Yazarlar
                 .OrderBy(x => x.YazarAd).ThenBy(x => x.YazarSoyad)
                 .Select(x => new YazarViewModel()

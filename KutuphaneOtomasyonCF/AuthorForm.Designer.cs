@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,10 @@
             this.lstYazarlar = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSoyad = new System.Windows.Forms.TextBox();
+            this.cmsYazar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsYazar.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuncelle
@@ -49,6 +54,7 @@
             this.btnGuncelle.Text = "Yazar Guncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Visible = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // label2
             // 
@@ -91,6 +97,7 @@
             this.btnEkle.TabIndex = 19;
             this.btnEkle.Text = "Yazar Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtAra
             // 
@@ -101,6 +108,7 @@
             // 
             // lstYazarlar
             // 
+            this.lstYazarlar.ContextMenuStrip = this.cmsYazar;
             this.lstYazarlar.FormattingEnabled = true;
             this.lstYazarlar.Location = new System.Drawing.Point(12, 45);
             this.lstYazarlar.Name = "lstYazarlar";
@@ -124,6 +132,28 @@
             this.txtSoyad.Size = new System.Drawing.Size(160, 20);
             this.txtSoyad.TabIndex = 33;
             // 
+            // cmsYazar
+            // 
+            this.cmsYazar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guncelleToolStripMenuItem,
+            this.silToolStripMenuItem});
+            this.cmsYazar.Name = "cmsUye";
+            this.cmsYazar.Size = new System.Drawing.Size(121, 48);
+            // 
+            // guncelleToolStripMenuItem
+            // 
+            this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
+            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.guncelleToolStripMenuItem.Text = "Guncelle";
+            this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // AuthorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +172,7 @@
             this.Name = "AuthorForm";
             this.Text = "AuthorForm";
             this.Load += new System.EventHandler(this.AuthorForm_Load);
+            this.cmsYazar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +190,8 @@
         private System.Windows.Forms.ListBox lstYazarlar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSoyad;
+        private System.Windows.Forms.ContextMenuStrip cmsYazar;
+        private System.Windows.Forms.ToolStripMenuItem guncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }

@@ -31,8 +31,8 @@ namespace KutuphaneOtomasyonCF
         {
             if (lstUyeler.SelectedIndex == null) return;
 
-            MyContext db=new MyContext();
             seciliUye = lstUyeler.SelectedItem as UyeViewModel;
+            MyContext db=new MyContext();
             var gosterilecekUye = db.Uyeler
                 .SingleOrDefault(x => x.UyeId == seciliUye.UyeId);
 
@@ -60,9 +60,9 @@ namespace KutuphaneOtomasyonCF
                         UyeTelefon = txtTelefon.Text,
                         UyeEmail = txtEmail.Text
                     };
-                    tran.Commit();
                     db.Uyeler.Add(yeniUye);
                     db.SaveChanges();
+                    tran.Commit();
                     lstUyeler.DataSource = dataHelper.UyeleriGetir();
                 }
                 catch (Exception ex)
@@ -85,8 +85,8 @@ namespace KutuphaneOtomasyonCF
         {
             if (lstUyeler.SelectedItem == null) return;
 
-            MyContext db = new MyContext();
             seciliUye = lstUyeler.SelectedItem as UyeViewModel;
+            MyContext db = new MyContext();
             var guncelUye = db.Uyeler
                 .SingleOrDefault(x => x.UyeId == seciliUye.UyeId);
 
@@ -118,11 +118,10 @@ namespace KutuphaneOtomasyonCF
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MyContext db = new MyContext();
             if (lstUyeler.SelectedItem == null) return;
 
             seciliUye = lstUyeler.SelectedItem as UyeViewModel;
-
+            MyContext db = new MyContext();
             var bulunacakUye = db.Uyeler
                 .SingleOrDefault(x => x.UyeId == seciliUye.UyeId);
 
