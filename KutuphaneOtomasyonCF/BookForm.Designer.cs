@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lstKitap = new System.Windows.Forms.ListBox();
+            this.lstKitaplar = new System.Windows.Forms.ListBox();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
+            this.txtYazar = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.nuStok = new System.Windows.Forms.NumericUpDown();
@@ -48,13 +48,14 @@
             this.cmsKitap.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstKitap
+            // lstKitaplar
             // 
-            this.lstKitap.FormattingEnabled = true;
-            this.lstKitap.Location = new System.Drawing.Point(12, 38);
-            this.lstKitap.Name = "lstKitap";
-            this.lstKitap.Size = new System.Drawing.Size(320, 264);
-            this.lstKitap.TabIndex = 0;
+            this.lstKitaplar.FormattingEnabled = true;
+            this.lstKitaplar.Location = new System.Drawing.Point(12, 38);
+            this.lstKitaplar.Name = "lstKitaplar";
+            this.lstKitaplar.Size = new System.Drawing.Size(320, 264);
+            this.lstKitaplar.TabIndex = 0;
+            this.lstKitaplar.SelectedIndexChanged += new System.EventHandler(this.lstKitaplar_SelectedIndexChanged);
             // 
             // txtAra
             // 
@@ -93,18 +94,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 41);
+            this.label8.Location = new System.Drawing.Point(401, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(19, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "ISBN:";
+            this.label8.Text = "Id:";
             // 
-            // txtSoyad
+            // txtYazar
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(437, 90);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(160, 20);
-            this.txtSoyad.TabIndex = 16;
+            this.txtYazar.Location = new System.Drawing.Point(437, 90);
+            this.txtYazar.Name = "txtYazar";
+            this.txtYazar.Size = new System.Drawing.Size(160, 20);
+            this.txtYazar.TabIndex = 16;
             // 
             // txtAd
             // 
@@ -179,11 +180,11 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtSoyad);
+            this.Controls.Add(this.txtYazar);
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKitap);
+            this.Controls.Add(this.lstKitaplar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "BookForm";
@@ -198,13 +199,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstKitap;
+        private System.Windows.Forms.ListBox lstKitaplar;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSoyad;
+        private System.Windows.Forms.TextBox txtYazar;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.NumericUpDown nuStok;

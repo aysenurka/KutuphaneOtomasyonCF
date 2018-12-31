@@ -42,7 +42,7 @@ namespace KutuphaneOtomasyonCF.Mock
                 MockContext.Kitaplar.Add(new Kitap()
                 {
                     KitapAd = FakeData.TextData.GetSentence(),
-                    Stok = (short)FakeData.NumberData.GetNumber(1, 5)
+                    Stok = (short)FakeData.NumberData.GetNumber(1, 10)
                 });
             }
         }

@@ -26,15 +26,26 @@ namespace KutuphaneOtomasyonCF
         {
             MyContext db = new MyContext();
 
-            lstKitap.DataSource = db.Kitaplar
+            lstKitaplar.DataSource = db.Kitaplar
                 .OrderBy(x => x.KitapAd)
                 .Select(x=> new KitapViewModel() {
                     KitapId=x.KitapId,
                     KitapAd=x.KitapAd,
-                    Yazar=x.Yazar
+                    Yazar=x.Yazar,
+                    Stok=x.Stok
                 })
                 .ToList();
         }
 
+        private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstKitaplar.SelectedIndex == null) return;
+
+            var seciliKitap = lstKitaplar.SelectedItem as KitapViewModel;
+            txtId.Text = seciliKitap.KitapId.ToString();
+            txtAd.Text = seciliKitap.KitapAd;
+            txtYazar.Text = seciliKitap.Yazar.ToString();
+            nuStok.Value = seciliKitap.Stok;
+        }
     }
 }

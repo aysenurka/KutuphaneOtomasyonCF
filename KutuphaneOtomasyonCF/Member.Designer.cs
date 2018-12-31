@@ -59,6 +59,7 @@
             this.lstUyeler.Name = "lstUyeler";
             this.lstUyeler.Size = new System.Drawing.Size(188, 303);
             this.lstUyeler.TabIndex = 0;
+            this.lstUyeler.SelectedIndexChanged += new System.EventHandler(this.lstUyeler_SelectedIndexChanged);
             // 
             // cmsUye
             // 

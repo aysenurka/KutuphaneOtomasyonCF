@@ -32,5 +32,15 @@ namespace KutuphaneOtomasyonCF
                 })
                 .ToList();
         }
+
+        private void lstYazarlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstYazarlar.SelectedIndex == null) return;
+
+            var seciliYazar = lstYazarlar.SelectedItem as YazarViewModel;
+            txtId.Text = seciliYazar.YazarId.ToString();
+            txtAd.Text = seciliYazar.YazarAd;
+            txtSoyad.Text = seciliYazar.YazarSoyad;
+        }
     }
 }

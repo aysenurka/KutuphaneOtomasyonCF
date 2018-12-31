@@ -106,6 +106,7 @@
             this.lstYazarlar.Name = "lstYazarlar";
             this.lstYazarlar.Size = new System.Drawing.Size(188, 303);
             this.lstYazarlar.TabIndex = 17;
+            this.lstYazarlar.SelectedIndexChanged += new System.EventHandler(this.lstYazarlar_SelectedIndexChanged);
             // 
             // label3
             // 

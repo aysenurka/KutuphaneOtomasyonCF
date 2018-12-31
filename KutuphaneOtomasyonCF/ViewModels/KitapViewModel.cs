@@ -12,6 +12,7 @@ namespace KutuphaneOtomasyonCF.ViewModels
         public int KitapId { get; set; }
         public string KitapAd { get; set; }
         public Yazar Yazar { get; set; }
+        public short Stok { get; set; }
 
         public override string ToString() => $"{KitapAd} - {Yazar.YazarAd} {Yazar.YazarSoyad}";
     }
