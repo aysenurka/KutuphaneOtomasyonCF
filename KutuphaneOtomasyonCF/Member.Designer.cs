@@ -67,19 +67,21 @@
             this.guncelleToolStripMenuItem,
             this.silToolStripMenuItem});
             this.cmsUye.Name = "cmsUye";
-            this.cmsUye.Size = new System.Drawing.Size(121, 48);
+            this.cmsUye.Size = new System.Drawing.Size(181, 70);
             // 
             // guncelleToolStripMenuItem
             // 
             this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
-            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guncelleToolStripMenuItem.Text = "Guncelle";
+            this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // txtAra
             // 
@@ -96,6 +98,7 @@
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "Uye Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtId
             // 
@@ -203,6 +206,7 @@
             this.btnGuncelle.Text = "Uye Guncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Visible = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // MemberForm
             // 
