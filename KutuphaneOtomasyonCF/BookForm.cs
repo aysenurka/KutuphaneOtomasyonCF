@@ -31,7 +31,7 @@ namespace KutuphaneOtomasyonCF
                 .Select(x=> new KitapViewModel() {
                     KitapId=x.KitapId,
                     KitapAd=x.KitapAd,
-                    Yazar=x.Yazar,
+                    Yazar=x.Yazar, //viewmodelden sonra kontrol et
                     Stok=x.Stok
                 })
                 .ToList();

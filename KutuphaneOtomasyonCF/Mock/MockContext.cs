@@ -16,7 +16,7 @@ namespace KutuphaneOtomasyonCF.MockData
         {
             for (int i = 0; i < 40; i++)
             {
-                //var email = (FakeData.NameData.GetFirstName().Substring(0, 1) + "." + FakeData.NameData.GetSurname() + "@email.com").ToLower();
+                var email = (FakeData.NameData.GetFirstName().Substring(0, 1) + "." + FakeData.NameData.GetSurname() + "@email.com").ToLower();
                 var yeniUye = new Uye
                 {
                     UyeAd = FakeData.NameData.GetFirstName(),
@@ -24,8 +24,8 @@ namespace KutuphaneOtomasyonCF.MockData
                     UyeTckn = FakeData.TextData.GetNumeric(11),
                     UyeTelefon = "5" + FakeData.TextData.GetNumeric(9),
                 };
-                yeniUye.UyeEmail= (yeniUye.UyeAd.Substring(0, 1) + "." + yeniUye.UyeSoyad + "@email.com").ToLower();
-            Uyeler.Add(yeniUye);
+                yeniUye.UyeEmail = email.Length > 30 ? email.Substring(0, 30) : email;
+                Uyeler.Add(yeniUye);
             }
 
             for (int i = 0; i < 20; i++)
@@ -36,7 +36,6 @@ namespace KutuphaneOtomasyonCF.MockData
                     YazarSoyad = FakeData.NameData.GetSurname()
                 });
             }
-
 
             for (int i = 0; i < 30; i++)
             {
