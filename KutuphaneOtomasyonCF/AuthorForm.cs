@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KutuphaneOtomasyonCF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace KutuphaneOtomasyonCF
         public AuthorForm()
         {
             InitializeComponent();
+        }
+
+        private void AuthorForm_Load(object sender, EventArgs e)
+        {
+            MyContext db = new MyContext();
+
+            lstYazarlar.DataSource = db.Yazarlar
+                .OrderBy(x => x.YazarAd).ThenBy(x => x.YazarSoyad)
+                .Select(x => new YazarViewModel()
+                {
+                    YazarId = x.YazarId,
+                    YazarAd = x.YazarAd,
+                    YazarSoyad = x.YazarSoyad
+                })
+                .ToList();
         }
     }
 }

@@ -25,14 +25,6 @@ namespace KutuphaneOtomasyonCF
         private void BookForm_Load(object sender, EventArgs e)
         {
             MyContext db = new MyContext();
-            //kitaplar = HomePage.MockContext.Kitaplar;
-            //kitaplar.Add(DataHelper.KitaplariGetir());
-
-            //MockContext.Kitaplar=db.Kitaplar.OrderBy(x => x.KitapAd).ToList();
-
-
-
-
 
             lstKitap.DataSource = db.Kitaplar
                 .OrderBy(x => x.KitapAd)

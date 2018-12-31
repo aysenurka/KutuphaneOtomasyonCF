@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lstUyeler = new System.Windows.Forms.ListBox();
+            this.cmsUye = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.btnEkle = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -38,9 +41,6 @@
             this.txtTckn = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.cmsUye = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +59,26 @@
             this.lstUyeler.Name = "lstUyeler";
             this.lstUyeler.Size = new System.Drawing.Size(188, 303);
             this.lstUyeler.TabIndex = 0;
+            // 
+            // cmsUye
+            // 
+            this.cmsUye.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guncelleToolStripMenuItem,
+            this.silToolStripMenuItem});
+            this.cmsUye.Name = "cmsUye";
+            this.cmsUye.Size = new System.Drawing.Size(121, 48);
+            // 
+            // guncelleToolStripMenuItem
+            // 
+            this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
+            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.guncelleToolStripMenuItem.Text = "Guncelle";
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
             // 
             // txtAra
             // 
@@ -118,26 +138,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(160, 20);
             this.txtEmail.TabIndex = 8;
-            // 
-            // cmsUye
-            // 
-            this.cmsUye.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guncelleToolStripMenuItem,
-            this.silToolStripMenuItem});
-            this.cmsUye.Name = "cmsUye";
-            this.cmsUye.Size = new System.Drawing.Size(121, 48);
-            // 
-            // guncelleToolStripMenuItem
-            // 
-            this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
-            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.guncelleToolStripMenuItem.Text = "Guncelle";
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.silToolStripMenuItem.Text = "Sil";
             // 
             // label1
             // 
@@ -228,6 +228,7 @@
             this.MaximizeBox = false;
             this.Name = "MemberForm";
             this.Text = "MemberForm";
+            this.Load += new System.EventHandler(this.MemberForm_Load);
             this.cmsUye.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

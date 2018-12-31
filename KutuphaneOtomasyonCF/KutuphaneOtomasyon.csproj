@@ -119,6 +119,9 @@
     <Compile Include="ViewModels\KitapViewModel.cs" />
     <Compile Include="ViewModels\UyeViewModel.cs" />
     <Compile Include="ViewModels\YazarViewModel.cs" />
+    <EmbeddedResource Include="AuthorForm.resx">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookForm.resx">
       <DependentUpon>BookForm.cs</DependentUpon>
     </EmbeddedResource>

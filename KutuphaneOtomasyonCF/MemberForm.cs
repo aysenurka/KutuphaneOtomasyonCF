@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KutuphaneOtomasyonCF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace KutuphaneOtomasyonCF
         public MemberForm()
         {
             InitializeComponent();
+        }
+
+        private void MemberForm_Load(object sender, EventArgs e)
+        {
+            MyContext db = new MyContext();
+
+            lstUyeler.DataSource = db.Uyeler
+                .OrderBy(x => x.UyeAd).ThenBy(x => x.UyeSoyad)
+                .Select(x => new UyeViewModel()
+                {
+                    UyeId = x.UyeId,
+                    UyeAd = x.UyeAd,
+                    UyeSoyad = x.UyeSoyad
+                })
+                .ToList();
         }
     }
 }

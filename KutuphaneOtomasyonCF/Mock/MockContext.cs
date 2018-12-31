@@ -16,17 +16,16 @@ namespace KutuphaneOtomasyonCF.MockData
         {
             for (int i = 0; i < 40; i++)
             {
-                var ad = FakeData.NameData.GetFirstName();
-                var soyad = FakeData.NameData.GetSurname();
-                var email = (FakeData.NameData.GetFirstName().Substring(0, 1) + "." + FakeData.NameData.GetSurname() + "@email.com").ToLower();
-                Uyeler.Add(new Uye()
+                //var email = (FakeData.NameData.GetFirstName().Substring(0, 1) + "." + FakeData.NameData.GetSurname() + "@email.com").ToLower();
+                var yeniUye = new Uye
                 {
-                    UyeAd = ad.Length > 20 ? ad.Substring(0, 20) : ad,
-                    UyeSoyad = soyad.Length > 20 ? soyad.Substring(0, 20) : ad,
+                    UyeAd = FakeData.NameData.GetFirstName(),
+                    UyeSoyad = FakeData.NameData.GetSurname(),
                     UyeTckn = FakeData.TextData.GetNumeric(11),
-                    UyeTelefon = "0" + FakeData.TextData.GetNumeric(10),
-                    UyeEmail = email.Length > 30 ? email.Substring(0, 30) : email
-                });
+                    UyeTelefon = "5" + FakeData.TextData.GetNumeric(9),
+                };
+                yeniUye.UyeEmail= (yeniUye.UyeAd.Substring(0, 1) + "." + yeniUye.UyeSoyad + "@email.com").ToLower();
+            Uyeler.Add(yeniUye);
             }
 
             for (int i = 0; i < 20; i++)
