@@ -44,12 +44,14 @@
             this.cmsKitap = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbYazarlar = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nuStok)).BeginInit();
             this.cmsKitap.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstKitaplar
             // 
+            this.lstKitaplar.ContextMenuStrip = this.cmsKitap;
             this.lstKitaplar.FormattingEnabled = true;
             this.lstKitaplar.Location = new System.Drawing.Point(12, 38);
             this.lstKitaplar.Name = "lstKitaplar";
@@ -138,6 +140,7 @@
             this.btnGuncelle.Text = "Kitap Guncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Visible = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -161,18 +164,29 @@
             this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
             this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.guncelleToolStripMenuItem.Text = "Guncelle";
+            this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // cmbYazarlar
+            // 
+            this.cmbYazarlar.FormattingEnabled = true;
+            this.cmbYazarlar.Location = new System.Drawing.Point(451, 214);
+            this.cmbYazarlar.Name = "cmbYazarlar";
+            this.cmbYazarlar.Size = new System.Drawing.Size(160, 21);
+            this.cmbYazarlar.TabIndex = 25;
             // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 333);
+            this.Controls.Add(this.cmbYazarlar);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.nuStok);
@@ -214,5 +228,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsKitap;
         private System.Windows.Forms.ToolStripMenuItem guncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbYazarlar;
     }
 }
