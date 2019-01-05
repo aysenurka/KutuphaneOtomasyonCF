@@ -162,7 +162,7 @@ namespace KutuphaneOtomasyonCF
             MyContext db = new MyContext();
             var kelime = txtAra.Text.ToLower();
             var bulunanKitaplar = dataHelper.KitaplariGetir()
-                .Where(x => x.KitapAd.ToLower().Contains(kelime) || x.YazarAd.ToLower().Contains(kelime))
+                .Where(x => x.KitapAd.ToLower().Contains(kelime) || x.YazarAd.ToLower().Contains(kelime) || x.YazarSoyad.ToLower().Contains(kelime))
                 .ToList();
             lstKitaplar.DataSource = bulunanKitaplar;
         }

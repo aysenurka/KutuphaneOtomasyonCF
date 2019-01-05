@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201812301324128_B1.Designer.cs">
       <DependentUpon>201812301324128_B1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901052010277_B2.cs" />
+    <Compile Include="Migrations\201901052010277_B2.Designer.cs">
+      <DependentUpon>201901052010277_B2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Mock\MockContext.cs" />
     <Compile Include="MyContext.cs" />
@@ -115,6 +119,7 @@
     <Compile Include="RentForm.Designer.cs">
       <DependentUpon>RentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\KiraViewModel.cs" />
     <Compile Include="ViewModels\KitapViewModel.cs" />
     <Compile Include="ViewModels\UyeViewModel.cs" />
     <Compile Include="ViewModels\YazarViewModel.cs" />
@@ -141,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812301324128_B1.resx">
       <DependentUpon>201812301324128_B1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901052010277_B2.resx">
+      <DependentUpon>201901052010277_B2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

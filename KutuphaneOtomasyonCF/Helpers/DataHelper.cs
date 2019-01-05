@@ -61,5 +61,23 @@ namespace KutuphaneOtomasyonCF.Helpers
                 .ToList();
             return yazarlar;
         }
+
+        public List<KiraViewModel> KiralariGetir()
+        {
+            MyContext db=new MyContext();
+            var kiralar = db.Kiralar
+                .OrderBy(x => x.KiraId)
+                .Select(x => new KiraViewModel()
+                {
+                    KiraId = x.KiraId,
+                    KitapId = x.KitapId,
+                    KitapAd = x.Kitap.KitapAd,
+                    UyeId = x.UyeId,
+                    UyeAd = x.Uye.UyeAd,
+                    UyeSoyad = x.Uye.UyeSoyad
+                })
+                .ToList();
+            return kiralar;
+        }
     }
 }

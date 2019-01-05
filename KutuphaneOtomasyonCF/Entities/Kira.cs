@@ -36,13 +36,17 @@ namespace KutuphaneOtomasyonCF.Entities
         [Required]
         [Column(TypeName = "smalldatetime")]
         public static DateTime AlisTarihi { get; set; } = DateTime.Now;
-
         public static DateTime? VerisTarihi { get; set; }
+        public int UyeId { get; set; }
+        public int KitapId { get; set; }
 
         //navigation property
+        [ForeignKey("UyeId")]
         public virtual Uye Uye { get; set; }
+        [ForeignKey("KitapId")]
+        public virtual Kitap Kitap { get; set; }
 
-        public virtual ICollection<Kitap> Kitaplar { get; set; } = new HashSet<Kitap>();
+        //public virtual ICollection<Kitap> Kitaplar { get; set; } = new HashSet<Kitap>();
 
     }
 }

@@ -19,8 +19,8 @@ namespace KutuphaneOtomasyonCF.BLL
                     var eklenecekKira = new Kira()
                     {
                         KiraId = kira.KiraId,
-                        Uye = kira.Uye,
-                        Kitaplar = kira.Kitaplar
+                        Uye = kira.Uye
+                        //Kitaplar = kira.Kitaplar
                     };
                     db.Kiralar.Add(eklenecekKira);
                     tran.Commit();
