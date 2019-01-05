@@ -67,19 +67,19 @@
             this.guncelleToolStripMenuItem,
             this.silToolStripMenuItem});
             this.cmsUye.Name = "cmsUye";
-            this.cmsUye.Size = new System.Drawing.Size(181, 70);
+            this.cmsUye.Size = new System.Drawing.Size(121, 48);
             // 
             // guncelleToolStripMenuItem
             // 
             this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
-            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.guncelleToolStripMenuItem.Text = "Guncelle";
             this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
@@ -89,6 +89,7 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(188, 20);
             this.txtAra.TabIndex = 1;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // btnEkle
             // 

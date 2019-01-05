@@ -38,7 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtYazar = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.nuStok = new System.Windows.Forms.NumericUpDown();
@@ -87,11 +86,12 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(151, 20);
             this.txtAra.TabIndex = 1;
+            this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(388, 126);
+            this.label5.Location = new System.Drawing.Point(388, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 21;
@@ -100,7 +100,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(383, 99);
+            this.label6.Location = new System.Drawing.Point(383, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 20;
@@ -109,7 +109,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(397, 72);
+            this.label7.Location = new System.Drawing.Point(397, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 19;
@@ -123,13 +123,6 @@
             this.label8.Size = new System.Drawing.Size(19, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Id:";
-            // 
-            // txtYazar
-            // 
-            this.txtYazar.Location = new System.Drawing.Point(437, 90);
-            this.txtYazar.Name = "txtYazar";
-            this.txtYazar.Size = new System.Drawing.Size(160, 20);
-            this.txtYazar.TabIndex = 16;
             // 
             // txtAd
             // 
@@ -177,7 +170,7 @@
             // cmbYazarlar
             // 
             this.cmbYazarlar.FormattingEnabled = true;
-            this.cmbYazarlar.Location = new System.Drawing.Point(451, 214);
+            this.cmbYazarlar.Location = new System.Drawing.Point(437, 91);
             this.cmbYazarlar.Name = "cmbYazarlar";
             this.cmbYazarlar.Size = new System.Drawing.Size(160, 21);
             this.cmbYazarlar.TabIndex = 25;
@@ -195,7 +188,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtYazar);
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtAra);
@@ -220,7 +212,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtYazar;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.NumericUpDown nuStok;

@@ -141,5 +141,15 @@ namespace KutuphaneOtomasyonCF
                 }
             }
         }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            var kelime = txtAra.Text.ToLower();
+            MyContext db=new MyContext();
+            var bulunanUyeler = dataHelper.UyeleriGetir()
+                .Where(x => x.UyeAd.ToLower().Contains(kelime) || x.UyeSoyad.ToLower().Contains(kelime))
+                .ToList();
+            lstUyeler.DataSource = bulunanUyeler;
+        }
     }
 }

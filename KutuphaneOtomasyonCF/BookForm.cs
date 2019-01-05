@@ -71,7 +71,6 @@ namespace KutuphaneOtomasyonCF
                 .SingleOrDefault(x => x.KitapId == seciliKitap.KitapId);
 
             using (var tran = db.Database.BeginTransaction())
-
             {
                 try
                 {
@@ -86,7 +85,6 @@ namespace KutuphaneOtomasyonCF
                     throw ex;
                 }
             }
-
         }
 
         private void guncelleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,12 +129,12 @@ namespace KutuphaneOtomasyonCF
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            MyContext db=new MyContext();
+            MyContext db = new MyContext();
             seciliYazar = cmbYazarlar.SelectedItem as YazarViewModel;
             var eklenecekYazar = db.Yazarlar
                 .SingleOrDefault(x => x.YazarId == seciliYazar.YazarId);
 
-            using (var tran=db.Database.BeginTransaction())
+            using (var tran = db.Database.BeginTransaction())
             {
                 try
                 {
@@ -157,6 +155,16 @@ namespace KutuphaneOtomasyonCF
                     throw ex;
                 }
             }
+        }
+
+        private void txtAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            MyContext db = new MyContext();
+            var kelime = txtAra.Text.ToLower();
+            var bulunanKitaplar = dataHelper.KitaplariGetir()
+                .Where(x => x.KitapAd.ToLower().Contains(kelime) || x.YazarAd.ToLower().Contains(kelime))
+                .ToList();
+            lstKitaplar.DataSource = bulunanKitaplar;
         }
     }
 }

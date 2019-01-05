@@ -37,11 +37,11 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.lstYazarlar = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
             this.cmsYazar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
             this.cmsYazar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(188, 20);
             this.txtAra.TabIndex = 18;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // lstYazarlar
             // 
@@ -115,22 +116,6 @@
             this.lstYazarlar.Size = new System.Drawing.Size(188, 303);
             this.lstYazarlar.TabIndex = 17;
             this.lstYazarlar.SelectedIndexChanged += new System.EventHandler(this.lstYazarlar_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(225, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Soyad:";
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.Location = new System.Drawing.Point(296, 97);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(160, 20);
-            this.txtSoyad.TabIndex = 33;
             // 
             // cmsYazar
             // 
@@ -153,6 +138,22 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(225, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Soyad:";
+            // 
+            // txtSoyad
+            // 
+            this.txtSoyad.Location = new System.Drawing.Point(296, 97);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(160, 20);
+            this.txtSoyad.TabIndex = 33;
             // 
             // AuthorForm
             // 
