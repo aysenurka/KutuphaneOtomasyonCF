@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lstKitaplar = new System.Windows.Forms.ListBox();
+            this.cmsKitap = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,12 +44,9 @@
             this.nuStok = new System.Windows.Forms.NumericUpDown();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
-            this.cmsKitap = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.guncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbYazarlar = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nuStok)).BeginInit();
             this.cmsKitap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuStok)).BeginInit();
             this.SuspendLayout();
             // 
             // lstKitaplar
@@ -58,6 +58,28 @@
             this.lstKitaplar.Size = new System.Drawing.Size(320, 264);
             this.lstKitaplar.TabIndex = 0;
             this.lstKitaplar.SelectedIndexChanged += new System.EventHandler(this.lstKitaplar_SelectedIndexChanged);
+            // 
+            // cmsKitap
+            // 
+            this.cmsKitap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guncelleToolStripMenuItem,
+            this.silToolStripMenuItem});
+            this.cmsKitap.Name = "cmsKitap";
+            this.cmsKitap.Size = new System.Drawing.Size(121, 48);
+            // 
+            // guncelleToolStripMenuItem
+            // 
+            this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
+            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.guncelleToolStripMenuItem.Text = "Guncelle";
+            this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // txtAra
             // 
@@ -150,28 +172,7 @@
             this.btnEkle.TabIndex = 23;
             this.btnEkle.Text = "Kitap Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
-            // 
-            // cmsKitap
-            // 
-            this.cmsKitap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guncelleToolStripMenuItem,
-            this.silToolStripMenuItem});
-            this.cmsKitap.Name = "cmsKitap";
-            this.cmsKitap.Size = new System.Drawing.Size(121, 48);
-            // 
-            // guncelleToolStripMenuItem
-            // 
-            this.guncelleToolStripMenuItem.Name = "guncelleToolStripMenuItem";
-            this.guncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.guncelleToolStripMenuItem.Text = "Guncelle";
-            this.guncelleToolStripMenuItem.Click += new System.EventHandler(this.guncelleToolStripMenuItem_Click);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // cmbYazarlar
             // 
@@ -204,8 +205,8 @@
             this.Name = "BookForm";
             this.Text = "BookForm";
             this.Load += new System.EventHandler(this.BookForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nuStok)).EndInit();
             this.cmsKitap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nuStok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

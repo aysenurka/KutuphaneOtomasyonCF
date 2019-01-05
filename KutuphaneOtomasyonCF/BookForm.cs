@@ -22,7 +22,6 @@ namespace KutuphaneOtomasyonCF
         }
 
         DataHelper dataHelper = new DataHelper();
-        //private List<KitapViewModel> kitaplar;
         private KitapViewModel seciliKitap;
         private YazarViewModel seciliYazar;
         private void BookForm_Load(object sender, EventArgs e)
@@ -36,9 +35,8 @@ namespace KutuphaneOtomasyonCF
 
             MyContext db = new MyContext();
             seciliKitap = lstKitaplar.SelectedItem as KitapViewModel;
-
             var gosterilecekYazar = db.Yazarlar
-                .SingleOrDefault(x => x.YazarId == seciliKitap.YazarId);
+                            .SingleOrDefault(x => x.YazarId == seciliKitap.YazarId);
 
             seciliYazar = new YazarViewModel()
             {
@@ -48,7 +46,18 @@ namespace KutuphaneOtomasyonCF
             };
             txtId.Text = seciliKitap.KitapId.ToString();
             txtAd.Text = seciliKitap.KitapAd;
-            txtYazar.Text = seciliYazar.ToString();
+
+            var yazarList = dataHelper.YazarlariGetir();
+            cmbYazarlar.DataSource = yazarList;
+            foreach (var item in yazarList)
+            {
+                if (item.YazarId == seciliKitap.YazarId)
+                {
+                    cmbYazarlar.SelectedItem = item;
+                    break;
+                }
+            }
+
             nuStok.Value = seciliKitap.Stok;
         }
 
@@ -93,16 +102,61 @@ namespace KutuphaneOtomasyonCF
 
             MyContext db = new MyContext();
             seciliKitap = lstKitaplar.SelectedItem as KitapViewModel;
+            seciliYazar = cmbYazarlar.SelectedItem as YazarViewModel;
             var guncellenecekKitap = db.Kitaplar
                 .SingleOrDefault(x => x.KitapId == seciliKitap.KitapId);
-            //var guncel
+            var guncellenecekYazar = db.Yazarlar
+                .SingleOrDefault(x => x.YazarId == seciliYazar.YazarId);
 
-            guncellenecekKitap = new Kitap()
+            using (var tran = db.Database.BeginTransaction())
             {
-                KitapAd = txtAd.Text,
-                //Yazar = txtYazar.Text,
-                Stok = (short)nuStok.Value
-            };
+                try
+                {
+                    guncellenecekKitap.KitapAd = txtAd.Text;
+                    guncellenecekKitap.Yazar = guncellenecekYazar;
+                    guncellenecekKitap.Stok = (short)nuStok.Value;
+
+                    db.SaveChanges();
+                    tran.Commit();
+                    lstKitaplar.DataSource = dataHelper.KitaplariGetir();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    throw ex;
+                }
+            }
+            btnGuncelle.Visible = false;
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            MyContext db=new MyContext();
+            seciliYazar = cmbYazarlar.SelectedItem as YazarViewModel;
+            var eklenecekYazar = db.Yazarlar
+                .SingleOrDefault(x => x.YazarId == seciliYazar.YazarId);
+
+            using (var tran=db.Database.BeginTransaction())
+            {
+                try
+                {
+                    var eklenecekKitap = new Kitap()
+                    {
+                        KitapAd = txtAd.Text,
+                        Yazar = eklenecekYazar,
+                        Stok = (short)nuStok.Value
+                    };
+                    db.Kitaplar.Add(eklenecekKitap);
+                    db.SaveChanges();
+                    tran.Commit();
+                    lstKitaplar.DataSource = dataHelper.KitaplariGetir();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    throw ex;
+                }
+            }
         }
     }
 }
